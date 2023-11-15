@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Sensation Week</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6be9227da0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="Logo_2___1_-removebg-preview.png" alt="logo"></a>
+    </section>
+    <div id="about">
+        <p>Experience the vibrancy of African Sensation Week, a dynamic series of events designed to 
+            showcase the richness of the African Union to the campus and community. Our primary objective 
+            is to educate and immerse others in the diverse countries, cultures, and people of the African continent.</p>
+        <p>We are thrilled to announce the return of African Sensation Week after a hiatus, marking the first celebration in years. 
+            Join us in this exciting week, brimming with a variety of events — from Zumba classes and bowling to potlucks, meaningful discussions, and afrobeat night. 
+            The festivities take place from November 27th to December 1st, right after the Thanksgiving break.</p>
+        <p>We can't wait to have you celebrate with us! To secure your spot, kindly RSVP for events, especially for limited-ticket activities like bowling night. 
+            Help us spread the word that African Sensation Week is back and in full swing. 
+            Let's make this week a memorable celebration of diversity and community!</p>
+            <p>Explore our list of events below. 
+                If you have any questions or require accommodations, please feel free to send us a message.</p>
+
+    </div>
+    <div class="events">
+        <ul>
+            <li> <img src="Virtual Zumba Class Instagram Story-2.png"> </li>
+            <li>  <a href="https://forms.gle/MmpLqLTztaqdJ4vo9" target="_blank"> <img src="Cream Polka Dots Illustrated Bowling Invitation (Portrait)-6.png"> </a> </li>
+            <li>  <img src="Let's talk About .png"> </li>
+            <li> <a href="https://forms.gle/bxbPBrhS54ZfD9c88" target="_blank"> <img src="Potluck part.png"> </a> </li>
+        </ul>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 cladd="sub-title">Contact Us</h1>
+                    <p><i class="fa-regular fa-envelope"></i>africanunion@uni.edu</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/uni.africanunion/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your email" required>
+                        <input name="Message" rows="5" placeholder="Your Message">
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scriptURL='URL'
+        const form=document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent succenssfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },3000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error', error.message))
+    
+        })
+    </script>
+</body>
+</html>
