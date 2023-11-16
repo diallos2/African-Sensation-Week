@@ -18,24 +18,12 @@ html{
     background-position: center;
 
 }
-.container{
-    padding: 10px 10%;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.logo{
-    border-radius: 50%;
-    width: 110px;
-    border: -20px solid white;
-}
+
 /*---about---*/
 #about{
     padding: 80px 0;
     color:rgb(15, 14, 14);
+    text-align: center;
 
 }
 
@@ -98,6 +86,7 @@ form .btn.btn2{
 /*---projects---*/
 #events{
     padding: 50px 0;
+    align-items: center;
 }
 .events img{
     width: 100%;
@@ -160,4 +149,3 @@ nav .fa-solid{
         flex-basis: 100%;
     }
 }
-
